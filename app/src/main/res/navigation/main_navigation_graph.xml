@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/currencyConverterScreen">
+
+    <fragment
+        android:id="@+id/currencyConverterScreen"
+        android:name="com.app.currencyconverter.presentation.main_screen.CurrencyConverterScreen"
+        android:label="currency_converter_screen_fragment"
+        tools:layout="@layout/currency_converter_screen_fragment" >
+        <action
+            android:id="@+id/action_currencyConverterScreen_to_converterScreen"
+            app:destination="@id/converterScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/converterScreen"
+        android:name="com.app.currencyconverter.presentation.converter_screen.ConverterScreen"
+        android:label="converter_screen_fragment"
+        tools:layout="@layout/converter_screen_fragment" >
+        <argument
+            android:name="uiModel"
+            app:argType="com.app.core.domain.ui_model.CurrencyUIModel" />
+    </fragment>
+</navigation>
